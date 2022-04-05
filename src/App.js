@@ -5,10 +5,12 @@ function App() {
   const [isBlue, setIsBlue] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
+  const backgroundColor = isButtonDisabled ? 'gray' : isBlue ? 'blue' : 'red';
+
   return (
     <div className="App">
       <button
-        style={{ backgroundColor: isBlue ? 'blue' : 'red' }}
+        style={{ backgroundColor }}
         onClick={() => setIsBlue(true)}
         disabled={isButtonDisabled}
       >
@@ -19,7 +21,9 @@ function App() {
         aria-checked={isButtonDisabled}
         checked={isButtonDisabled}
         onChange={() => setIsButtonDisabled((prevValue) => !prevValue)}
+        id="disablebutton-checkbox"
       />
+      <label htmlFor="disablebutton-checkbox">Disable button</label>
     </div>
   );
 }
