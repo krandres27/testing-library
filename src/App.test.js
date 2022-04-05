@@ -13,7 +13,7 @@ test('button turns blue when clicked and  hast the proper text', () => {
   const buttonElement = screen.getByRole('button', { name: 'Change to blue' });
   fireEvent.click(buttonElement);
   expect(buttonElement).toHaveStyle({ backgroundColor: 'blue' });
-  expect(buttonElement.textContent).toBe('Change to red');
+  expect(buttonElement).toHaveTextContent('Change to red');
 });
 
 test('button is enabled by default and when checkbox is checked the button must be disabled', () => {
